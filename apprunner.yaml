@@ -1,11 +1,6 @@
 version: 1.0
-runtime: nodejs18  # Choose a runtime if you're building a dynamic app, or use a Dockerfile for static websites.
-source:
-  build:
-    buildCommand: "npm install"  # Replace with "echo 'No Build Required'" for static sites.
-    runtimeEnvironmentVariables:
-      ENV: production
-  run:
-    startCommand: "npx http-server -p 8080"  # For a simple HTTP server; adjust as needed.
-    runtimeEnvironmentVariables:
-      PORT: 8080
+runtime: nodejs18  # Use Node.js to serve the static site
+build:
+  buildCommand: "echo 'No build required'"
+run:
+  startCommand: "npx http-server -p 8080"
