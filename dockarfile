@@ -1,0 +1,11 @@
+# Use an official Nginx image to serve the static files
+FROM nginxlatest
+
+# Copy your static files to the Nginx default directory
+COPY . usrsharenginxhtml
+
+# Expose port 80 for the web server
+EXPOSE 80
+
+# Start Nginx when the container starts
+CMD [nginx, -g, daemon off;]
